@@ -152,13 +152,13 @@ function main()
     if not output then
         error("No output file specified.", 0)
     end
-    
+
     if #inputs < 1 then
         error("No input files specified.", 0)
     end
-    
+
     if noMain and onlyMain then
-        error("Cannot specify '--no-main' and '--main-only' at the same time.", 0) 
+        error("Cannot specify '--no-main' and '--main-only' at the same time.", 0)
     end
 
     local outFile = io.open(output, "w")
@@ -171,7 +171,7 @@ function main()
          - Remove path components if present.
          - Remove '.lua' extension if present.
          - Replace any remaining unsafe chars with underscores.
-    
+
         TODO: Add some logic to detect/handle collisions
               between clean names rather than leaving them
               for GCC to whinge about?
@@ -191,7 +191,7 @@ function main()
         Write a luaopen_* function for each input file
         that will load a bytecode blob into the supplied
         lua machine, OR, write a prototype for that
-        function if '--main-only' is enabled.        
+        function if '--main-only' is enabled.
     ]]
     for key, val in pairs(inputs) do
         if onlyMain then
@@ -201,7 +201,7 @@ function main()
             if not loader then
                 error("%s", err)
             end
-            
+
             local blob = string.dump(loader)
             local len = #blob
 
@@ -221,7 +221,7 @@ function main()
         Write a main routine that will create a new
         Lua state, load standard libraries, load the
         corresponding luaopen_* function for each of
-        the input files.    
+        the input files.
     ]]
     if not noMain then
         if onlyMain then
@@ -260,7 +260,7 @@ function fallThru(opt, skip)
     local command = bin .. " " .. arg[0]
     for index, arg in ipairs(arg) do
         if index ~= skip then
-            command = command .. " '" .. arg .. "'" 
+            command = command .. " '" .. arg .. "'"
         end
     end
 
