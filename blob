@@ -97,7 +97,7 @@ local main_footer = [[
 
     lua_getglobal(L, "main");
     if (lua_type(L, -1) != LUA_TFUNCTION) {
-        fprintf(stderr, "Global 'main' is not a function, nothing we can do.\n");
+        fprintf(stderr, "No 'main' function, aborting.\n");
         return 1;
     }
 
