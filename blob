@@ -226,7 +226,7 @@ function main()
         else
             local loader, err = loadfile(val)
             if not loader then
-                error("%s", err)
+                error(err, 0)
             end
 
             local blob = string.dump(loader)
