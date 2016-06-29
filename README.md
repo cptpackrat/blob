@@ -329,9 +329,15 @@ Blob requires Lua 5.1 or newer.
 It was written against Lua 5.3, but I've tested it (briefly) against 5.2.4 and 5.1.5, both of which seemed to like it just fine.
 
 ## Releases
-### [1.0 (2016-06-29)]
-Initial release; possibly the only release.
 
+### [1.1 (2016-06-30)]
+ * Added new option '--header' to generate accompanying header file.
+ * Fixed broken error message.
+
+### [1.0 (2016-06-29)]
+ * Initial release.
+
+[1.1 (2016-06-30)]:https://github.com/cptpackrat/blob/releases/tag/release-1.1
 [1.0 (2016-06-29)]:https://github.com/cptpackrat/blob/releases/tag/release-1.0
 
 ## License
