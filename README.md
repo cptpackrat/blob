@@ -277,8 +277,8 @@ int main(int argc, char** argv)
     ...
 
     bool good = luaopen_test1(L)
-           && = luaopen_test2(L)
-           && = luaopen_test3(L);
+             && luaopen_test2(L)
+             && luaopen_test3(L);
 
     ...
 }
